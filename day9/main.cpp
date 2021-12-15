@@ -197,9 +197,8 @@ void part2(const std::vector<std::string>& data, const std::vector<Point>& lowPo
     }
 
     std::sort(std::begin(basins), std::end(basins), [](const Basin& a, const Basin& b){
-        return a.size() < b.size();
+        return a.size() > b.size();
     });
-    std::reverse(std::begin(basins), std::end(basins));
 
     auto mul3 = [](const auto& basins){
         return basins.at(0).size() * basins.at(1).size() * basins.at(2).size();
