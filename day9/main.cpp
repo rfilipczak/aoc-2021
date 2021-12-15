@@ -188,12 +188,11 @@ void part2(const std::vector<std::string>& data, const std::vector<Point>& lowPo
         
     std::vector<Basin> basins;
 
-    for (int i = 0; auto& p : lowPoints)
+    for (auto& p : lowPoints)
     {
         Basin basin;
         addNeighbours(map, p, basin);
         basins.emplace_back(basin);
-        ++i;
     }
 
     std::sort(std::begin(basins), std::end(basins), [](const Basin& a, const Basin& b){
